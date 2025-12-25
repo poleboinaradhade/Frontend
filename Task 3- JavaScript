@@ -1,0 +1,31 @@
+let count = 0;
+const counterDisplay = document.getElementById('counter-display');
+const incrementBtn = document.getElementById('increment-btn');
+const decrementBtn = document.getElementById('decrement-btn');
+const resetBtn = document.getElementById('reset-btn');
+
+// Function to update display
+function updateDisplay() {
+    counterDisplay.textContent = count;
+}
+
+// Event listeners for buttons
+incrementBtn.addEventListener('click', () => {
+    count++;
+    updateDisplay();
+});
+
+decrementBtn.addEventListener('click', () => {
+    if (count > 0) {
+        count--;
+        updateDisplay();
+    }
+});
+
+resetBtn.addEventListener('click', () => {
+    count = 0;
+    updateDisplay();
+});
+
+// Initial display update
+updateDisplay();
